@@ -1,0 +1,1 @@
+{"name":"spin-solver","version":"0.1.0","private":true,"type":"module","scripts":{"test":"node --test","check":"node --check src/poker.js && node --check src/app.js"}}
