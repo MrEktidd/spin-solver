@@ -28,16 +28,14 @@ npm test
 npm run check
 ```
 
-## Deploy from private GitHub repository
+## Publish with GitHub Pages (GitHub Free)
 
-Cloudflare Pages → Create a project → Connect GitHub → Select `MrEktidd/spin-solver`.
+The site is prepared for GitHub Pages: `index.html` is at the repository root, with relative CSS and JS paths and a `.nojekyll` file. No build command or deployment workflow is needed.
 
-- Framework preset: None
-- Build command: leave empty
-- Build output directory: `/` (repository root)
-- Production branch: `main`
+1. [Repository Settings](https://github.com/MrEktidd/spin-solver/settings) → General → Danger Zone → Change repository visibility → Make public. Changing visibility exposes the entire repository and its history.
+2. [Pages settings](https://github.com/MrEktidd/spin-solver/settings/pages) → Build and deployment → Source: **Deploy from a branch** → Branch: **main** → Folder: **/(root)** → Save.
 
-The GitHub repository may remain private. The Cloudflare Pages URL is publicly accessible by default unless you protect it separately. **No Pages deployment is configured automatically by this repository.**
+After GitHub publishes successfully, the expected URL is **https://mrektidd.github.io/spin-solver/**. This URL is not guaranteed to be active until the settings are completed and deployment succeeds. Future pushes to `main` will publish automatically.
 
 ## Read before relying on numbers
 
