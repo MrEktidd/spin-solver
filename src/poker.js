@@ -20,7 +20,7 @@ export function evaluate(cards){
  for(const group of suits)if(group.length>=5){const sm=group.reduce((m,n)=>m|(1<<n),0),sf=straightHigh(sm);if(sf)return padded(8,[sf]);}
  const quads=[] ,triples=[],pairs=[];
  for(let n=14;n>=2;n--){if(count[n]===4)quads.push(n);else if(count[n]===3)triples.push(n);else if(count[n]===2)pairs.push(n);}
- if(quads.length)return padded(7,[quads[0],...Array.from({length:13},(_,i)=>14-i).filter(n=>n!==quads[0]&&count[n])[0] ].slice(0,2));
+ if(quads.length)return padded(7,[quads[0],Array.from({length:13},(_,i)=>14-i).filter(n=>n!==quads[0]&&count[n])[0] ].slice(0,2));
  if(triples.length&&(pairs.length||triples.length>1))return padded(6,[triples[0],Math.max(pairs[0]||0,triples[1]||0)]);
  for(const group of suits)if(group.length>=5)return padded(5,group.sort((a,b)=>b-a).slice(0,5));
  const straight=straightHigh(mask);if(straight)return padded(4,[straight]);
